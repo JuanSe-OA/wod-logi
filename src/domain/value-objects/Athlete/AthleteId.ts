@@ -1,10 +1,10 @@
-import { err, ok, Result } from '../../shared/utils/result';
+import { err, ok, Util } from '../../../shared/utils/Utils';
 import { ValidationError } from '@shared/errors';
 
-class AthleteId {
+export class AthleteId {
   private constructor(private value: string) {}
 
-  static create(id: string): Result<AthleteId, ValidationError> {
+  static create(id: string): Util<AthleteId, ValidationError> {
     if (!id || id.trim().length === 0) {
       return err(new ValidationError('Athlete ID is required.'));
     }

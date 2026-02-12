@@ -1,4 +1,4 @@
-import { Result, ok, err } from '@shared/utils/result';
+import { Util, ok, err } from '@shared/utils/Utils';
 import { ValidationError } from '@shared/errors';
 
 /**
@@ -20,7 +20,7 @@ export class WODId {
   /**
    * Factory method for creating WODId
    */
-  static create(id: string): Result<WODId, ValidationError> {
+  static create(id: string): Util<WODId, ValidationError> {
     if (!id || id.trim().length === 0) {
       return err(new ValidationError('WOD ID cannot be empty', 'wodId'));
     }
@@ -54,7 +54,7 @@ export class WODId {
   /**
    * Create WODId from a date (common pattern: "2024-01-15")
    */
-  static fromDate(date: Date): Result<WODId, ValidationError> {
+  static fromDate(date: Date): Util<WODId, ValidationError> {
     const dateString = date.toISOString().split('T')[0];
     if (!dateString) {
       return err(new ValidationError('Invalid date format', 'wodId'));
