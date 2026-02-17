@@ -6,5 +6,7 @@ export interface IAthleteRepository {
 
   findById(id: AthleteId): Promise<Athlete | null>;
 
-  existsByEmail(email: AthleteEmail): Promise<boolean>;
+  findByEmail(email: AthleteEmail): Promise<Athlete | null>;
+
+  deleteById(id: AthleteId): Promise<void>;
 }

@@ -20,6 +20,10 @@ export class ResultId {
     return ok(new ResultId(normalized));
   }
 
+  getValue(): string {
+    return this.value;
+  }
+
   toString(): string {
     return this.value;
   }
