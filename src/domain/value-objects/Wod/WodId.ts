@@ -73,7 +73,7 @@ export class WODId {
     return this.value === other?.value;
   }
 
-  toValue(): string {
+  getValue(): string {
     return this.value;
   }
 }
